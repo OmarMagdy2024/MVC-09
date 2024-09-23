@@ -1,0 +1,11 @@
+﻿@using Company_DAL.Models
+@model Department
+
+<div class="mb-3">
+    <label asp-for="Name">Name :</label>
+    <input readonly type="text" asp-for="Name" placeholder="Name Of Department" class="form-control" />
+</div>
+<div>
+    <label asp-for="DateOfCreation">Date Of Creation :</label>
+    <input readonly asp-for="DateOfCreation" class="form-control" />
+</div>

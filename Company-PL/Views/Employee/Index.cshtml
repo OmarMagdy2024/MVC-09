@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "All";
+}
+
+<h1 class="mt-5">All Employee</h1>
+<br />
+<br />
+<a asp-controller="Employee" asp-action="Create" class="btn btn-outline-primary mt-4 mb-4 pt-3 pb-3 pr-5 pl-5">Add Employee</a>
+<br />
+<br />
+<form asp-action="Index" class="row col-8 m-auto">
+    <input type="text" name="Search" class="form-control col-10" />
+    <input type="submit" value="Search" class="btn btn-outline-success" />
+</form>
+<br />
+<br />
+
+@if(@Model.Count()>0)
+{
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(D => D.Name)</th>
+                <th>@Html.DisplayNameFor(D => D.HiringDate)</th>
+                <th>@Html.DisplayNameFor(D => D.Address)</th>
+                <th>@Html.DisplayNameFor(D => D.Salary)</th>
+                <th>@Html.DisplayNameFor(D => D.Department)</th>
+                <th>@Html.DisplayNameFor(D => D.Email)</th>
+                <th>Details</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Employee in Model)
+            {
+                <tr>
+                    <td>@Employee.Name</td>
+                    <td>@Employee.HiringDate</td>
+                    <td>@Employee.Address</td>
+                    <td>@Html.DisplayFor(E => Employee.Salary)</td>
+                    <td>@Html.DisplayFor(E => Employee.Department.Name)</td>
+                    <td>@Html.DisplayFor(E => Employee.Email)</td>
+                    <td><a asp-controller="Employee" asp-action="Details" asp-route-id="@Employee.Id" class="btn btn-info">Details <i class="fa-regular fa-eye"></i></a></td>
+                    <td><a asp-controller="Employee" asp-action="Update" asp-route-id="@Employee.Id" class="btn btn-success">Update <i class="fa-solid fa-pen"></i></a></td>
+                    <td><a asp-controller="Employee" asp-action="Delete" asp-route-id="@Employee.Id" class="btn btn-danger">Delete <i class="fa-solid fa-trash-can"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1 class="mt-5 text-danger alert-danger p-3">You Don't Have Any Employee</h1>
+}
+

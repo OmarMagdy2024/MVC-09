@@ -1,0 +1,23 @@
+﻿@using Company_DAL.Models
+
+@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="mt-4">Create Employee</h1>
+<br />
+<br />
+<form asp-action="Create" enctype="multipart/form-data">
+    <partial name="_EmployeeParial"></partial>
+    <input type="submit" value="Employee Department" class="btn btn-outline-success pt-2 pb-2 pl-5 pr-5 mt-3" />
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-primary pt-2 pb-2 pl-5 pr-5 mt-3">Back To List</a>
+</form>
+
+@section Validation {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+

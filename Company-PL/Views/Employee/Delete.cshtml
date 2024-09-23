@@ -1,0 +1,26 @@
+﻿<h1 class="mt-4">Delete Employee</h1>
+<br />
+<br />
+<form asp-action="Delete">
+    <partial name="_EmployeeReadOnlyParial"></partial>
+    <a asp-controller="Employee" asp-action="Index" class="ml-2 btn btn-outline-primary pt-2 pb-2 pl-5 pr-5 mt-3">Back To List</a>
+    <button type="button" class="ml-2 btn btn-outline-danger pt-2 pb-2 pl-5 pr-5 mt-3" data-toggle="modal" data-target="#exampleModal">
+        Delete Employee</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-5" id="exampleModalLabel">Delete Employee</h3>
+                    <button type="button" class="btn-close btn-danger" data-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body">
+                    <h5>Do You Want To Delete This Employee?</h5>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Delete Employee" class="btn btn-outline-danger" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
